@@ -1,0 +1,14 @@
+from flask import Flask, request
+
+app = Flask(__name)
+
+@app.route('https://github.com/Chawisky/test2.git', methods=['POST'])
+def mon_webhook():
+    data = request.json  # Les données envoyées par Zapier (ou autre service) sont généralement au format JSON
+    # Faites quelque chose avec les données, comme exécuter votre code
+    return "Traitement réussi"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
